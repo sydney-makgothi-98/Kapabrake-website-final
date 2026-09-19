@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kapabrake Products | Woven Brake Lining</title>
+  <meta name="description" content="Explore Kapabrake's complete product range of woven brake lining, clutch cones, and industrial braking components." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive-mobile.css" />
+  <style>
+    .nav-logo-img {
+      transition: transform 0.3s ease;
+    }
+    .nav-logo:hover .nav-logo-img {
+      transform: rotate(15deg);
+    }
+  </style>
+  <style>
+    /* Scroll-Linked Canvas Animation Styles */
+    .scroll-sequence-container {
+      position: relative;
+      background: linear-gradient(135deg, #050d1a 0%, #0d1b2a 100%);
+      overflow: hidden;
+    }
+
+    .canvas-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #sequenceCanvas {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    /* Text Overlay Callouts */
+    .frame-callout {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      max-width: 400px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .callout-text {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .callout-description {
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Loading Indicator */
+    .loading-indicator {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(230, 57, 70, 0.2);
+      border-top-color: #e63946;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      color: #fff;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .frame-callout {
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="Media/Appended%20Images%20%26%20Videos/Kapabrake%20July%202026/Bg%20Removed/Kapabrake_Large_Logo-removebg-preview.png" alt="Kapabrake Logo" class="nav-logo-img" style="height:70px;width:auto;margin-right:1rem;">
+      <span class="nav-logo-text">KAPA<em>BRAKE</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html"   class="nav-link">Home</a>
+      <a href="index.html#industries" class="nav-link">Industries</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="about.html"   class="nav-link">About</a>
+      <a href="certifications.html"    class="nav-link">Certifications</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="tag tag-center">Product Range</span>
+      <h1 class="aos">Kapabrake Brake Lining</h1>
+      <p class="aos" data-delay="100">Precision-engineered woven brake lining designed for demanding applications.</p>
+    </div>
+  </div>
+
+  <!-- Brake Sample Showcase -->
+  <section class="section" style="background:var(--bg-primary)">
+    <div class="container" style="max-width:900px;display:flex;flex-direction:column;align-items:center;gap:2rem;">
+      <div style="text-align:center;">
+        <span class="tag" style="justify-content:center;">Premium Quality</span>
+        <h2 style="color:#fff;margin-top:1rem;">Kapabrake Brake Lining</h2>
+      </div>
+      <div style="border:2px solid var(--red);border-radius:var(--radius-lg);display:flex;justify-content:center;width:100%;max-width:600px;">
+        <img src="Media/Appended%20Images%20%26%20Videos/Narrow.png" alt="Brake Lining Sample" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Dimensions -->
+  <section class="section" style="background:var(--bg-secondary)">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Specifications</span>
+        <h2 style="color:#fff;">Product Dimensions</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;" class="aos">
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.5rem;">Standard Roll Lengths</h4>
+          <p>Standard roll lengths are 10m long, providing convenient sizing for most applications.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.5rem;">Thickness Range</h4>
+          <p>The lining is manufactured in standard ranges up to 25mm thick, with custom thicknesses available on request.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.5rem;">Custom Sizing</h4>
+          <p>The woven lining can be cut to size according to customer's exact requirements, ensuring perfect fit for your application.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SA Logo Section -->
+  <section class="section" style="background:var(--bg-primary);display:flex;align-items:center;justify-content:center;padding:3rem 1rem;">
+    <div style="max-width:600px;">
+      <img src="Media/Appended%20Images%20%26%20Videos/SA%20Logo.png" alt="SA Logo" style="width:100%;height:auto;">
+    </div>
+  </section>
+
+  <!-- Product Information -->
+  <section class="section" style="background:var(--bg-primary)">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Engineering</span>
+        <h2 style="color:#fff;">Product Information</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2rem;margin-top:2rem;" class="aos">
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.75rem;">Advanced Material Composition</h4>
+          <p>The 3-axis weave and resins used provide a dense material with resistance to wear, high temperature and compression under load.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.75rem;">Brass Wire Reinforcement</h4>
+          <p>The brass wire inclusion not only helps to stabilise the friction value by conducting heat away from the operating surface, but also reinforces the lining when holes are drilled for holding screws. Brass wire is also more environmentally friendly than the use of copper wire in brakes.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.75rem;">Precision Surface Finishing</h4>
+          <p>Both surfaces are supplied ground, making it suitable for bonding and riveting to either internal or external contracting brake lining. Surface grinding also ensures maximum contact with the drum.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.75rem;">Durability & Safety</h4>
+          <p>The lining is made in singular form and has no layers to separate and peel off. There is no asbestos used in the manufacture of Kapabrake woven lining.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Offering -->
+  <section class="section" style="background:var(--bg-secondary)">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Options</span>
+        <h2 style="color:#fff;">Product Offering</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-top:2rem;" class="aos">
+        <p>Kapabrake offers various versions depending on the application. Data sheets are available on request to help you select the perfect product for your specific needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Fitment -->
+  <section class="section" style="background:var(--bg-primary)">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Installation</span>
+        <h2 style="color:#fff;">Product Fitment</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;" class="aos">
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.75rem;">Flexible Installation</h4>
+          <p>The lining is flexible and can be cold fitted. However, we recommend heating the lining at 160°C for 15 minutes to allow for more exact moulding of the lining against the band.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff;margin-bottom:0.75rem;">Professional Curing</h4>
+          <p>We can cure the brake lining to the shoe or band for best possible fitment and optimal performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refurbishment & Relining -->
+  <section class="section" style="background:var(--bg-secondary)">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Services</span>
+        <h2 style="color:#fff;">Refurbishment & Relining</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;" class="aos">
+        <p>We also do brake removal, sandblasting, coating of shoe or band and application of new brake linings. We have in-house sand blasting, spray painting and curing facilities.</p>
+        <p>Most importantly we conduct radial arcing of the lining to ensure optimal mating of the brake lining to the drum. This saves hours of lashing the brakes during commissioning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- On-Site Fitment -->
+  <section class="section" style="background:var(--bg-primary)">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Support</span>
+        <h2 style="color:#fff;">On-Site Fitment</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="margin-top:2rem;" class="aos">
+        <p>We can assist with on-site fitment to ensure your brake system is installed correctly and operates at peak performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialty Services -->
+  <section class="section" style="background:var(--bg-secondary);padding-bottom:2rem;">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Specialty</span>
+        <h2 style="color:#fff;">Beyond Brake Lining</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="margin-top:2rem;" class="aos">
+        <p>We also reline and rework clutches, friction discs and clutch cones, providing comprehensive brake and clutch solutions for industrial applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources & Downloads -->
+  <section class="section" style="background:var(--bg-secondary);padding-top:2rem;">
+    <div class="container" style="max-width:1000px">
+      <div class="section-header">
+        <span class="tag">Resources</span>
+        <h2 style="color:#fff;">Documentation & Downloads</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;" class="aos">
+        <div style="background:rgba(255,255,255,0.05);padding:2rem;border-radius:var(--radius-lg);border-left:4px solid var(--red);">
+          <h3 style="color:#fff;margin-bottom:1rem;">Kapabrake Prospectus</h3>
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:1.5rem;">Product information for mining brakes.</p>
+          <a href="Media/DLC/Kapabrake%20-%20Prospectus.pdf" download class="btn btn-primary" style="display:inline-block;">Download PDF</a>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);padding:2rem;border-radius:var(--radius-lg);border-left:4px solid var(--red);">
+          <h3 style="color:#fff;margin-bottom:1rem;">Engineering News Profile</h3>
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:1.5rem;">Kapabrake's engineering capabilities and industry recognition.</p>
+          <a href="Media/DLC/Kapabrake-Engineering-News-Profile.pdf" download class="btn btn-primary" style="display:inline-block;">Download PDF</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="cta-inner">
+      <span class="tag" style="justify-content:center;">Ready to Order?</span>
+      <h2 class="aos">Get Your Custom<br>Brake Lining</h2>
+      <p class="aos" data-delay="100">Contact our team to discuss your specific requirements and place an order.</p>
+      <div class="cta-actions aos" data-delay="200">
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        <a href="index.html#industries" class="btn btn-outline">View Applications</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><div class="footer-brand-name">KAPA<em>BRAKE</em></div><p class="footer-tagline">Precision brake lining for the world's most demanding industrial environments.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul><li><a href="industries/mining.html">Mining</a></li><li><a href="industries/marine.html">Marine</a></li><li><a href="industries/lifting.html">Lifting</a></li><li><a href="industries/oil-gas.html">Oil &amp; Gas</a></li><li><a href="industries/industrial.html">Industrial</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:customers@kapabrake.com">customers[a]kapabrake.com</a></li><li><a href="tel:+27212860641">+27 (21) 286 0641</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">© <span id="year"></span> Kapabrake. All rights reserved</p></div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Auto-update copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

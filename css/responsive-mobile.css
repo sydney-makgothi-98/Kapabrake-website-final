@@ -1,0 +1,792 @@
+/* ============================================================
+   KAPABRAKE — Mobile-First Responsive Design
+   Comprehensive breakpoint system for optimal viewing
+   ============================================================ */
+
+/* Mobile-First Base Styles (360px - 640px) */
+
+/* Body & Main Content */
+body {
+  padding-top: 0;
+}
+
+main {
+  padding-top: 0;
+}
+
+/* Navbar Mobile Adjustments */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 0.75rem;
+  z-index: 2001;
+  width: 100%;
+  height: auto;
+  min-height: 55px;
+  background: rgba(5, 13, 26, 0.99);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-logo {
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.nav-logo-img {
+  height: 45px;
+  width: auto;
+}
+
+.nav-logo-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex !important;
+}
+
+@media (max-width: 960px) {
+  .nav-links {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 13, 26, 0.99);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+    gap: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .nav-link {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+  }
+
+  .nav-link:last-of-type {
+    border-bottom: none;
+  }
+
+  .nav-cta {
+    background: #e63946;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    padding: 0;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+}
+
+.hamburger {
+  display: flex;
+}
+
+/* Hero Section Mobile */
+.hero {
+  min-height: 60vh;
+  margin-top: 55px;
+  padding-top: 2rem;
+}
+
+.page-hero {
+  margin-top: 55px;
+  padding-top: 3rem;
+}
+
+/* Ensure no overlap with navbar */
+main > section:first-child {
+  margin-top: 55px;
+}
+
+.hero-content {
+  padding: 0 1rem;
+  max-width: 100%;
+}
+
+.hero-stats {
+  bottom: 1rem;
+  left: 1rem;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.hero-stat {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+/* Container Mobile */
+.container {
+  padding: 0 1rem;
+}
+
+/* Sections Mobile */
+.section {
+  padding: 3rem 0;
+}
+
+.section-sm {
+  padding: 2rem 0;
+}
+
+/* Grid Layouts - Mobile: 1 Column */
+.value-block {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+  align-items: start;
+}
+
+.value-block.flip {
+  direction: ltr;
+}
+
+.value-block > div:first-child {
+  max-width: 100%;
+  width: 100%;
+}
+
+.industries-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.product-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0 1rem 2rem;
+}
+
+.solutions-grid {
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  padding: 0 1rem;
+}
+
+.benefits-grid {
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  padding: 0 1rem;
+}
+
+.about-grid {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.mv-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.blog-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.post-intro-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+.media-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 1rem;
+}
+
+.footer-grid {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 0 1rem 3rem;
+}
+
+.contact-wrap {
+  max-width: 100%;
+  padding: 0 0.75rem !important;
+}
+
+.contact-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 !important;
+}
+
+.contact-left {
+  padding: 1.5rem !important;
+  border-radius: 8px;
+}
+
+.contact-detail {
+  gap: 0.75rem;
+}
+
+.c-icon {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.contact-map {
+  min-height: 300px;
+}
+
+/* Image Optimization - Mobile */
+.product-showcase-img {
+  width: 100%;
+  height: auto;
+  max-width: 100vw;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+.val-img {
+  aspect-ratio: 16/9;
+  max-height: 40vh;
+  max-width: 100%;
+}
+
+/* Typography Mobile */
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3.5vw, 2.8rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
+/* Form Mobile */
+.form-row {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.contact-form {
+  padding: 1.5rem 1rem;
+}
+
+/* Footer Mobile */
+.footer-bottom {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-col {
+  text-align: left;
+}
+
+/* Tablet: 640px - 1024px */
+@media (min-width: 640px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    min-height: 65px;
+  }
+
+  .nav-logo-img {
+    height: 55px;
+  }
+
+  .nav-logo-text {
+    font-size: 1.15rem;
+  }
+
+  .hero {
+    min-height: 70vh;
+    margin-top: 65px;
+  }
+
+  .page-hero {
+    margin-top: 65px;
+    padding-top: 4rem;
+  }
+
+  main > section:first-child {
+    margin-top: 65px;
+  }
+
+  .hero-stats {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .hero-stat {
+    padding: 0.5rem 1rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-sm {
+    padding: 3rem 0;
+  }
+
+  /* Tablet Grid: 2 Columns */
+  .value-block {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
+    align-items: center;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    padding: 0 1.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    padding: 0 1.5rem 2rem;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+    padding: 0 1.5rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+    padding: 0 1.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    padding: 0 1.5rem;
+  }
+
+  .post-intro-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+    margin: 2rem 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .footer-col {
+    text-align: left;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  /* Tablet Images */
+  .product-showcase-img {
+    max-width: 350px;
+  }
+
+  .val-img {
+    aspect-ratio: 4/3;
+    max-height: 50vh;
+  }
+
+  /* Tablet Form */
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-form {
+    padding: 2rem;
+  }
+}
+
+/* Desktop: 1024px - 1280px */
+@media (min-width: 960px) {
+  .navbar {
+    position: fixed;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: relative !important;
+    top: auto !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 1.6rem 2rem;
+    min-height: 80px;
+  }
+
+  .nav-logo-img {
+    height: 70px;
+  }
+
+  .nav-logo-text {
+    font-size: 1.35rem;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: relative !important;
+    background: transparent !important;
+    gap: 2.5rem;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: 100vh;
+    margin-top: 80px;
+    padding-top: 0;
+  }
+
+  .page-hero {
+    margin-top: 80px;
+    padding-top: 6rem;
+  }
+
+  main > section:first-child {
+    margin-top: 0;
+  }
+
+  .hero-stats {
+    bottom: 2.5rem;
+    left: 2.5rem;
+    gap: 1rem;
+  }
+
+  .hero-stat {
+    padding: 0.7rem 1.3rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+  }
+
+  .section-sm {
+    padding: 4rem 0;
+  }
+
+  /* Desktop Grid: 3 Columns */
+  .value-block {
+    gap: 4rem;
+    padding: 0 2rem;
+    align-items: center;
+  }
+
+  .value-block.flip {
+    direction: rtl;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    padding: 0 2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 1.4rem;
+    padding: 0 2rem 3rem;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    padding: 0 2rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 0 2rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .post-intro-grid {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 3rem;
+    padding: 0 2rem;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding: 0 2rem 5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  /* Desktop Images */
+  .product-showcase-img {
+    max-width: 450px;
+  }
+
+  .val-img {
+    aspect-ratio: 4/3;
+  }
+
+  /* Desktop Form */
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form {
+    padding: 3rem;
+  }
+}
+
+/* Large Desktop: 1280px+ */
+@media (min-width: 1280px) {
+  .navbar {
+    padding: 1.6rem 2.5rem;
+  }
+
+  .page-hero {
+    padding-top: calc(8rem + 80px);
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 8rem 0;
+  }
+
+  /* Large Desktop Grid: 4-5 Columns */
+  .industries-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .value-block {
+    gap: 6rem;
+  }
+
+  .about-grid {
+    gap: 6rem;
+  }
+
+  .contact-grid {
+    gap: 3.5rem;
+  }
+
+  .footer-grid {
+    gap: 4rem;
+  }
+}
+
+/* Override inline grid styles for mobile */
+@media (max-width: 960px) {
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Extra Small Devices (320px - 360px) */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.8rem 0.75rem;
+  }
+
+  .nav-logo {
+    gap: 0.3rem;
+  }
+
+  .nav-logo-text {
+    font-size: 0.95rem;
+  }
+
+  .nav-logo-img {
+    height: 50px;
+  }
+
+  .hero-stat {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1rem, 3vw, 1.8rem);
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Accessibility: High Contrast */
+@media (prefers-contrast: more) {
+  .nav-link {
+    font-weight: 600;
+  }
+
+  .btn {
+    border-width: 2px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .footer,
+  .cta-section {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: #0066cc;
+  }
+}
