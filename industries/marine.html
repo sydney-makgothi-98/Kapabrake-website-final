@@ -146,7 +146,7 @@
   <div id="progress-bar"></div>
   <nav class="navbar">
     <a href="../index.html" class="nav-logo">
-      <img src="../Media/Appended%20Images%20%26%20Videos/Kapabrake%20July%202026/Bg%20Removed/Kapabrake_Large_Logo-removebg-preview.png" alt="Kapabrake Logo" class="nav-logo-img" style="height:70px;width:auto;margin-right:1rem;">
+      <img src="../Media/Main/Kapabrake%20July%202026/Bg%20Removed/Kapabrake_Large_Logo-removebg-preview.png" alt="Kapabrake Logo" class="nav-logo-img" style="height:70px;width:auto;margin-right:1rem;">
       <span class="nav-logo-text">KAPA<em>BRAKE</em></span>
     </a>
     <div class="nav-links">
@@ -181,7 +181,7 @@
         <!-- Left: Interactive Vessel Gallery with Auto-Cycling -->
         <div class="vessel-gallery" id="vesselGallery">
           <div class="vessel-main-image" id="mainImageContainer">
-            <img id="mainVesselImage" src="../Media/Appended%20Images%20%26%20Videos/Vessel 1.png" alt="Marine Vessel 1">
+            <img id="mainVesselImage" src="../Media/Main/Vessel 1.png" alt="Marine Vessel 1">
           </div>
           <div class="gallery-nav-dots" id="galleryDots"></div>
           <div class="gallery-auto-indicator">Some of the vessels that we have serviced over the years</div>
@@ -214,7 +214,7 @@
       <!-- Application 1: Vessel Winch & Mooring Brakes -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem;" class="aos">
         <div style="max-width:470px;margin:0 auto;">
-          <img src="../Media/Appended%20Images%20%26%20Videos/Vessel%20Winch.jpeg" alt="Vessel Winch & Mooring Brakes" class="product-showcase-img" style="width:100%;height:auto;display:block;opacity:0.95;">
+          <img src="../Media/Main/Vessel%20Winch.jpeg" alt="Vessel Winch & Mooring Brakes" class="product-showcase-img" style="width:100%;height:auto;display:block;opacity:0.95;">
         </div>
         <div>
           <h3 style="color:#fff;margin-bottom:1.5rem;">Vessel Winch &amp; Mooring Brakes</h3>
@@ -230,17 +230,17 @@
         <!-- Left: Mini 2-Image Gallery -->
         <div class="vessel-gallery">
           <div class="vessel-main-image">
-            <img id="clutchMainImage" src="../Media/Appended%20Images%20%26%20Videos/New%20Photo%201.jpg" alt="Clutch Photo 1" class="product-showcase-img" style="width:100%;height:auto;display:block;opacity:0.95;">
+            <img id="clutchMainImage" src="../Media/Main/New%20Photo%201.jpg" alt="Clutch Photo 1" class="product-showcase-img" style="width:100%;height:auto;display:block;opacity:0.95;">
           </div>
           <div class="vessel-thumbnails">
             <div class="vessel-thumbnail active" onclick="changeClutchImage(1)" style="cursor:pointer;">
-              <img src="../Media/Appended%20Images%20%26%20Videos/New%20Photo%201.jpg" alt="Clutch Photo 1">
+              <img src="../Media/Main/New%20Photo%201.jpg" alt="Clutch Photo 1">
             </div>
             <div class="vessel-thumbnail" onclick="changeClutchImage(2)" style="cursor:pointer;">
-              <img src="../Media/Appended%20Images%20%26%20Videos/Kapabrake%20July%202026/Bg%20Removed/Relining_Clutch_Bands-removebg-preview.png" alt="Relining Clutch Bands">
+              <img src="../Media/Main/Kapabrake%20July%202026/Bg%20Removed/Relining_Clutch_Bands-removebg-preview.png" alt="Relining Clutch Bands">
             </div>
             <div class="vessel-thumbnail" onclick="changeClutchImage(3)" style="cursor:pointer;">
-              <img src="../Media/Appended%20Images%20%26%20Videos/New%20Photo%202.jpg" alt="Clutch Photo 2">
+              <img src="../Media/Main/New%20Photo%202.jpg" alt="Clutch Photo 2">
             </div>
           </div>
         </div>
@@ -255,7 +255,7 @@
           <div>
             <h3 style="color:#fff;margin-bottom:1.5rem;">Port Equipment Brakes</h3>
             <div style="margin-bottom:2rem;border-radius:var(--radius-lg);overflow:hidden;">
-              <img src="../Media/Appended%20Images%20%26%20Videos/Kapabrake%20July%202026/Bg%20Removed/Marine_1-removebg-preview.png" alt="Port Equipment Brakes" class="product-showcase-img" style="width:100%;height:auto;display:block;opacity:0.95;">
+              <img src="../Media/Main/Kapabrake%20July%202026/Bg%20Removed/Marine_1-removebg-preview.png" alt="Port Equipment Brakes" class="product-showcase-img" style="width:100%;height:auto;display:block;opacity:0.95;">
             </div>
             <p style="color:var(--text-secondary);line-height:1.8;">Kapabrake is supplied for use in high-stress drum and band brake applications, specifically on harbor and shipborne deck cranes, anchor windlasses, and mooring winches.</p>
             <div style="margin-top:2rem;">
@@ -306,7 +306,7 @@
       for (let i = 1; i <= TOTAL_VESSELS; i++) {
         const thumb = document.createElement('div');
         thumb.className = `vessel-thumbnail ${i === 1 ? 'active' : ''}`;
-        thumb.innerHTML = `<img src="../Media/Appended%20Images%20%26%20Videos/Vessel ${i}.png" alt="Vessel ${i}">`;
+        thumb.innerHTML = `<img src="../Media/Main/Vessel ${i}.png" alt="Vessel ${i}">`;
         thumb.onclick = (e) => {
           changeVesselImage(i);
           pauseAutoPlay();
@@ -335,7 +335,7 @@
     function changeVesselImage(vesselNumber) {
       currentVessel = vesselNumber;
       const mainImage = document.getElementById('mainVesselImage');
-      mainImage.src = `../Media/Appended%20Images%20%26%20Videos/Vessel ${vesselNumber}.png`;
+      mainImage.src = `../Media/Main/Vessel ${vesselNumber}.png`;
 
       const thumbnails = document.querySelectorAll('.vessel-thumbnail');
       const dots = document.querySelectorAll('.gallery-dot');
@@ -379,9 +379,9 @@
     function changeClutchImage(imageNumber) {
       const mainImage = document.getElementById('clutchMainImage');
       const images = [
-        '../Media/Appended%20Images%20%26%20Videos/New%20Photo%201.jpg',
-        '../Media/Appended%20Images%20%26%20Videos/Kapabrake%20July%202026/Bg%20Removed/Relining_Clutch_Bands-removebg-preview.png',
-        '../Media/Appended%20Images%20%26%20Videos/New%20Photo%202.jpg'
+        '../Media/Main/New%20Photo%201.jpg',
+        '../Media/Main/Kapabrake%20July%202026/Bg%20Removed/Relining_Clutch_Bands-removebg-preview.png',
+        '../Media/Main/New%20Photo%202.jpg'
       ];
       mainImage.src = images[imageNumber - 1];
 
