@@ -72,37 +72,34 @@ Options -MultiViews
 # 4. RATE LIMITING (1000 requests per IP)
 # ============================================================
 # Prevents DDoS, brute force, and aggressive bot scraping
+# Commented out - enable only if needed and compatible with server
 
-<IfModule mod_ratelimit.c>
-    SetOutputFilter RATE_LIMIT
-    ModRateLimitZone limitzone 0.0.0.0/0 10 rate=1000
-</IfModule>
+# <IfModule mod_ratelimit.c>
+#     SetOutputFilter RATE_LIMIT
+#     ModRateLimitZone limitzone 0.0.0.0/0 10 rate=1000
+# </IfModule>
 
 # Alternative rate limiting using mod_evasive (if available)
-<IfModule mod_evasive20.c>
-    DOSHashTableSize 3097
-    DOSPageCount 2
-    DOSPageInterval 1
-    DOSSiteCount 50
-    DOSSiteInterval 1
-    DOSBlockingPeriod 600
-</IfModule>
+# <IfModule mod_evasive20.c>
+#     DOSHashTableSize 3097
+#     DOSPageCount 2
+#     DOSPageInterval 1
+#     DOSSiteCount 50
+#     DOSSiteInterval 1
+#     DOSBlockingPeriod 600
+# </IfModule>
 
 # ============================================================
 # 5. BLOCK MALICIOUS BOTS & SCRAPERS
 # ============================================================
 
-# Block known bad bots
-SetEnvIf Request_URI "^.*" REQUEST_URI=$1
-SetEnvIf Request_URI ".*(%0|%A|%B|%C|%D|%E|%F|127\.0).*" BADBOT
-SetEnvIf User-Agent "^Indy Library" BADBOT
-SetEnvIf User-Agent "^libwww-perl" BADBOT
-SetEnvIf User-Agent "^wget" BADBOT
-SetEnvIf User-Agent "^curl" BADBOT
-SetEnvIf User-Agent "^nikto" BADBOT
-SetEnvIf User-Agent "^sqlmap" BADBOT
-SetEnvIf User-Agent "^nmap" BADBOT
-SetEnvIf User-Agent "^masscan" BADBOT
+# Block known bad bots by User-Agent
+SetEnvIf User-Agent "wget" BADBOT
+SetEnvIf User-Agent "curl" BADBOT
+SetEnvIf User-Agent "nikto" BADBOT
+SetEnvIf User-Agent "sqlmap" BADBOT
+SetEnvIf User-Agent "nmap" BADBOT
+SetEnvIf User-Agent "masscan" BADBOT
 
 <Directory />
     Order allow,deny
@@ -186,15 +183,14 @@ SetEnvIf User-Agent "^masscan" BADBOT
 # ============================================================
 # 9. SQL INJECTION & XSS PROTECTION
 # ============================================================
+# Simplified to avoid server conflicts
 
-# Block SQL injection attempts
-RewriteCond %{QUERY_STRING} (\*|'|(--|#|/*|\*/|xp_|sp_)) [NC]
+# Block script tags in query strings
+RewriteCond %{QUERY_STRING} script [NC]
 RewriteRule .* - [F]
 
-# Block common XSS patterns
-RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
-RewriteCond %{QUERY_STRING} UNION.*SELECT [NC,OR]
-RewriteCond %{QUERY_STRING} union.*select [NC]
+# Block SQL commands in query strings
+RewriteCond %{QUERY_STRING} (union|select|insert|update|delete|drop) [NC]
 RewriteRule .* - [F]
 
 # ============================================================
