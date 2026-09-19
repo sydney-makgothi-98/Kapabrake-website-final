@@ -7,9 +7,9 @@
 # NO changes to website content, speed, or functionality.
 # ============================================================
 
-# Enable Rewrite Engine
-RewriteEngine On
-RewriteBase /
+# Enable Rewrite Engine (disabled for testing CSS loading)
+# RewriteEngine On
+# RewriteBase /
 
 # ============================================================
 # 1. HTTPS & SECURITY HEADERS
@@ -186,29 +186,29 @@ SetEnvIf User-Agent "masscan" BADBOT
 # Simplified to avoid server conflicts
 
 # Block script tags in query strings
-RewriteCond %{QUERY_STRING} script [NC]
-RewriteRule .* - [F]
+# RewriteCond %{QUERY_STRING} script [NC]
+# RewriteRule .* - [F]
 
 # Block SQL commands in query strings
-RewriteCond %{QUERY_STRING} (union|select|insert|update|delete|drop) [NC]
-RewriteRule .* - [F]
+# RewriteCond %{QUERY_STRING} (union|select|insert|update|delete|drop) [NC]
+# RewriteRule .* - [F]
 
 # ============================================================
 # 10. PREVENT COMMON ATTACKS
 # ============================================================
 
 # Prevent access to config files
-RewriteRule ^wp-config\.php - [F]
-RewriteRule ^\.htaccess$ - [F]
-RewriteRule ^\.env$ - [F]
+# RewriteRule ^wp-config\.php - [F]
+# RewriteRule ^\.htaccess$ - [F]
+# RewriteRule ^\.env$ - [F]
 
 # Prevent null byte injection
-RewriteCond %{THE_REQUEST} ^.+%00
-RewriteRule ^.*$ - [F]
+# RewriteCond %{THE_REQUEST} ^.+%00
+# RewriteRule ^.*$ - [F]
 
 # Prevent path traversal
-RewriteCond %{REQUEST_URI} \.\.[/\\]
-RewriteRule .* - [F]
+# RewriteCond %{REQUEST_URI} \.\.[/\\]
+# RewriteRule .* - [F]
 
 # ============================================================
 # 11. FIX COMMON ISSUES
