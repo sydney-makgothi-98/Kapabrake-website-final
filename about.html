@@ -148,21 +148,57 @@
 
 
 
+  <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">KAPA<em>BRAKE</em></div>
         <p class="footer-tagline">Precision brake lining for the world's most demanding industrial environments. Safety is not an option — it's our standard.</p>
       </div>
-      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#industries">Industries</a></li><li><a href="about.html">About Us</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Industries</h4><ul><li><a href="industries/mining.html">Mining</a></li><li><a href="industries/marine.html">Marine</a></li><li><a href="industries/lifting.html">Lifting</a></li><li><a href="industries/oil-gas.html">Oil &amp; Gas</a></li><li><a href="industries/industrial.html">Industrial</a></li></ul></div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="industries/mining.html">Mining</a></li>
+          <li><a href="industries/marine.html">Marine</a></li>
+          <li><a href="industries/lifting.html">Lifting</a></li>
+          <li><a href="industries/oil-gas.html">Oil &amp; Gas</a></li>
+          <li><a href="industries/industrial.html">Industrial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:customers@kapabrake.com">customers[a]kapabrake.com</a></li>
+          <li><a href="#" id="phone" data-p="KzI3ICgyMSkgMjg2IDA2NDE=">Show phone number</a></li>
+          <li><a href="#">Cape Town, South Africa</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
+
     <div class="footer-bottom">
       <p class="footer-copy">© <span id="year"></span> Kapabrake. All rights reserved</p>
-    </div>
+    
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script>
     // Auto-update copyright year
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -179,3 +215,5 @@
   </script>
 </body>
 </html>
+
+
